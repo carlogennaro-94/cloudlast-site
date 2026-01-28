@@ -1,4 +1,22 @@
+function getHost() {
+  if (typeof window === "undefined") return "";
+  return window.location.hostname.toLowerCase();
+}
+
 export default function App() {
+  const host = getHost();
+
+  const isInfo =
+    host === "cloudlast.info" ||
+    host === "www.cloudlast.info" ||
+    host.includes("cloudlast-site"); // utile per preview vercel
+
+  if (isInfo) return <InfoPage />;
+
+  return <LandingPage />;
+}
+
+function LandingPage() {
   return (
     <main style={styles.page}>
       <section style={styles.card}>
@@ -17,12 +35,51 @@ export default function App() {
             Vai al prodotto
           </a>
           <a style={styles.secondary} href="https://cloudlast.info">
-            Documentazione
+            Info prodotto
           </a>
         </div>
 
         <div style={styles.footer}>
           Status: online • {new Date().getFullYear()}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function InfoPage() {
+  return (
+    <main style={styles.page}>
+      <section style={styles.card}>
+        <div style={styles.badge}>cloudlast.info</div>
+
+        <h1 style={styles.h1}>Cloudlast — Info prodotto</h1>
+
+        <p style={styles.p}>
+          Cloudlast è un <b>ATS tascabile</b> per gestire candidature, pipeline e
+          documenti.
+        </p>
+
+        <div style={styles.sectionTitle}>Funzioni</div>
+        <ul style={styles.list}>
+          <li>Pipeline candidature (stati personalizzabili)</li>
+          <li>Gestione documenti e allegati</li>
+          <li>Ruoli e permessi</li>
+          <li>Audit / storico attività</li>
+        </ul>
+
+        <div style={styles.sectionTitle}>Link</div>
+        <div style={styles.row}>
+          <a style={styles.primary} href="https://cloudlast.it">
+            Sito
+          </a>
+          <a style={styles.secondary} href="https://cloudlast.cloud">
+            Prodotto
+          </a>
+        </div>
+
+        <div style={styles.footer}>
+          Cloudlast • {new Date().getFullYear()}
         </div>
       </section>
     </main>
@@ -61,6 +118,14 @@ const styles = {
   },
   h1: { margin: 0, fontSize: 30, letterSpacing: -0.5 },
   p: { marginTop: 12, marginBottom: 18, opacity: 0.82, lineHeight: 1.5 },
+  sectionTitle: { fontSize: 12, opacity: 0.6, marginBottom: 8 },
+  list: {
+    marginTop: 0,
+    marginBottom: 18,
+    opacity: 0.82,
+    lineHeight: 1.6,
+    paddingLeft: 18,
+  },
   row: { display: "flex", gap: 10, flexWrap: "wrap" },
   primary: {
     background: "#fff",
