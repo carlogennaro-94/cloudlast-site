@@ -17,6 +17,9 @@ export default function SiteLayout({ children }) {
             <NavLink to="/prodotto" className="nav-link">
               Prodotto
             </NavLink>
+            <NavLink to="/seo" className="nav-link">
+              SEO
+            </NavLink>
             <NavLink to="/info" className="nav-link">
               Info
             </NavLink>
