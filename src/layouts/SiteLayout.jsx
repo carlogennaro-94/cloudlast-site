@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import logo from "../assets/cloudlasto_logo_black.jpg";
 import "../styles/layout.css";
 
-export default function SiteLayout({ children }) {
+export default function SiteLayout() {
   return (
     <div className="app-shell">
       <header className="site-header">
@@ -10,6 +10,7 @@ export default function SiteLayout({ children }) {
           <NavLink to="/" className="brand-link">
             <img src={logo} alt="Cloudlast" className="brand-logo" />
           </NavLink>
+
           <nav className="site-nav">
             <NavLink to="/" className="nav-link">
               Home
@@ -23,14 +24,22 @@ export default function SiteLayout({ children }) {
             <NavLink to="/info" className="nav-link">
               Info
             </NavLink>
+            <NavLink to="/corporate" className="nav-link">
+              Trust
+            </NavLink>
           </nav>
         </div>
       </header>
+
       <main className="site-main">
-        <div className="container">{children}</div>
+        <div className="container">
+          <Outlet />
+        </div>
       </main>
+
       <footer className="site-footer">
         <div className="container">
+          <p className="slogan">Think Cloud build Last</p>
           <p>
             &copy; {new Date().getFullYear()} Cloudlast. Tutti i diritti
             riservati.

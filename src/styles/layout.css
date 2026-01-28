@@ -52,3 +52,9 @@
   font-size: 0.9rem;
   text-align: center;
 }
+
+.slogan {
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
