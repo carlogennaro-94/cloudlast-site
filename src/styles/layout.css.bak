@@ -1,0 +1,72 @@
+.app-shell {
+  min-height: 100vh;
+  background: var(--page-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: min(100% - 48px, 980px);
+  margin: 0 auto;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--page-bg);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 24px 0;
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 28px;
+  width: auto;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent);
+}
+
+.site-main {
+  flex: 1;
+  padding: 56px 0 80px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 20px 0 32px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
