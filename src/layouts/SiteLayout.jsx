@@ -1,10 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
+import CookieBanner from "../components/CookieBanner";
 import logo from "../assets/cloudlasto_logo_black.jpg";
 import "../styles/layout.css";
 
 export default function SiteLayout() {
   return (
     <div className="app-shell">
+      <CookieBanner />
       <header className="site-header">
         <div className="container">
           <NavLink to="/" className="brand-link">
